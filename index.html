@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SOLOROCK | Luthería, Reparación y Calibración de Guitarras</title>
+    <meta name="description" content="SOLOROCK - Calibración, reparación, electrónica, trastes, pintura y personalización de guitarras y bajos.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --black: #070707;
+            --black-soft: #101010;
+            --black-card: #151515;
+            --red: #e10600;
+            --red-dark: #a80000;
+            --white: #ffffff;
+            --gray: #b5b5b5;
+            --gray-dark: #242424;
+
+            --font-title: "Barlow Condensed", sans-serif;
+            --font-body: "Inter", sans-serif;
+
+            --max-width: 1200px;
+        }
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================================================
+           UTILIDADES
+        ========================================================= */
+
+        .container {
+            width: min(90%, var(--max-width));
+            margin: auto;
+        }
+
+        .section {
+            padding: 110px 0;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 800;
+            line-height: .9;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--red);
+        }
+
+        .section-intro {
+            max-width: 650px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 55px;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+
+            background: rgba(7, 7, 7, .88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,.05);
+        }
+
+        .nav {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+
+        .logo {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            gap: 4px;
+
+            transform: translateY(-20px);
+        }
+
+        .logo-symbol {
+            width: 110px;
+            height: auto;
+        }
+
+        .logo-text {
+            width: 115px;
+            height: auto;
+        }
+
+        .logo-slogan {
+            position: absolute;
+
+            top: 100%;
+            left: 0;
+
+            margin-top: 4px;
+
+            font-family: var(--font-title);
+            font-size: .9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+
+            color: var(--gray);
+
+            white-space: nowrap;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            transform: translateX(-280px);
+            
+        }
+
+        .nav-links a {
+            font-family: var(--font-title);
+            font-size: 1.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+        .nav-button {
+            padding: 12px 20px;
+            background: var(--red);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: .8rem;
+            transition: .25s;
+        }
+
+        .nav-button:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.97) 0%,
+                    rgba(0,0,0,.78) 45%,
+                    rgba(0,0,0,.2) 100%
+                ),
+                url("https://images.squarespace-cdn.com/content/v1/64fb3b40ee6525576f30a63f/1e95918b-ac5a-4c2a-aee6-f6e5d1fdc1b4/P1000406.jpg")
+                center / cover no-repeat;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 180px;
+
+            background: linear-gradient(
+                transparent,
+                var(--black)
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding-top: 100px;
+        }
+
+        .hero-kicker {
+            color: var(--red);
+            font-size: .9rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            font-size: clamp(5rem, 12vw, 10rem);
+            font-weight: 800;
+            line-height: .78;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: var(--red);
+        }
+
+        .hero-text {
+            color: #d0d0d0;
+            max-width: 610px;
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 16px 28px;
+
+            font-size: .85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--red);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,.05);
+        }
+
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .services {
+            background: var(--black);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--black-card);
+            border: 1px solid var(--gray-dark);
+            padding: 35px;
+
+            min-height: 260px;
+
+            transition: .3s;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: "";
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            right: -20px;
+            bottom: -20px;
+
+            background: var(--red);
+
+            transform: rotate(15deg);
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--red);
+        }
+
+        .service-card:hover::after {
+            opacity: .15;
+        }
+
+        .service-number {
+            font-family: var(--font-title);
+            font-size: 4rem;
+            color: var(--red);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: .9rem;
+        }
+
+/* =========================================================
+   NOSOTROS
+========================================================= */
+
+        .about {
+            background: #0b0b0b;
+        }
+
+
+        /* =========================================================
+        INTRO
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+
+        /* =========================================================
+        IMAGEN
+        ========================================================= */
+
+        .about-image {
+            min-height: 600px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent 60%,
+                    rgba(0,0,0,.8)
+                ),
+                url("https://images.squarespace-cdn.com/content/v1/64fb3b40ee6525576f30a63f/1e95918b-ac5a-4c2a-aee6-f6e5d1fdc1b4/P1000406.jpg")
+                center / cover no-repeat;
+        }
+
+
+        /* =========================================================
+        TEXTO INTRODUCTORIO
+        ========================================================= */
+
+        .about-intro {
+            padding: 30px 0;
+        }
+
+
+        .about-kicker {
+            color: var(--red);
+            font-size: .85rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+
+
+        .about-intro h2 {
+            font-family: var(--font-title);
+            font-size: clamp(3.5rem, 5vw, 6rem);
+            font-weight: 500;
+            line-height: .88;
+            text-transform: uppercase;
+            margin-bottom: 45px;
+        }
+
+
+        .about-intro h2 strong {
+            display: block;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+
+        .about-statement {
+            font-family: var(--font-title);
+            font-size: clamp(2rem, 3vw, 3.2rem);
+            font-weight: 500;
+            line-height: .95;
+            text-transform: uppercase;
+        }
+
+
+        .about-statement strong {
+            display: block;
+            color: var(--red);
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+
+        /* =========================================================
+        HISTORIA
+        ========================================================= */
+
+        .about-story {
+            margin-top: 180px;
+            max-width: 1000px;
+        }
+
+
+        .story-number {
+            color: var(--red);
+            font-family: var(--font-title);
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+
+        .about-story h2 {
+            font-family: var(--font-title);
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-weight: 800;
+            line-height: .82;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 70px;
+        }
+
+
+        .story-text {
+            max-width: 600px;
+            margin-left: auto;
+        }
+
+
+        .story-text p {
+            color: var(--gray);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+
+        .story-text .story-highlight {
+            color: var(--white);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 0px;
+        }
+
+
+        /* =========================================================
+        CIERRE
+        ========================================================= */
+
+        .about-ending {
+            margin-top: 180px;
+            padding: 100px 0;
+            text-align: center;
+
+            border-top: 1px solid var(--gray-dark);
+        }
+
+
+        .about-ending span {
+            display: block;
+
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            font-weight: 500;
+
+            letter-spacing: 5px;
+            color: var(--gray);
+
+            margin-bottom: 10px;
+        }
+
+
+        .about-ending strong {
+            display: block;
+
+            font-family: var(--font-title);
+            font-size: clamp(5rem, 12vw, 12rem);
+            font-weight: 800;
+            line-height: .8;
+
+            color: var(--white);
+        }
+
+
+        .about-ending strong::first-letter {
+            color: var(--red);
+        }
+
+        /* =========================================================
+           PROCESS
+        ========================================================= */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .process-item {
+            padding: 30px 20px;
+            border-top: 3px solid var(--red);
+            background: var(--black-card);
+        }
+
+        .process-item span {
+            font-family: var(--font-title);
+            color: var(--red);
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+
+        .process-item h3 {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin: 12px 0;
+        }
+
+        .process-item p {
+            color: var(--gray);
+            font-size: .9rem;
+            line-height: 1.7;
+        }
+
+        /* =========================================================
+           GALLERY
+        ========================================================= */
+
+        .gallery {
+            background: #090909;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-auto-rows: 250px;
+            gap: 12px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            background: #171717;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 25px;
+
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,.9)
+            );
+        }
+
+        .gallery-overlay h3 {
+            font-family: var(--font-title);
+            font-size: 1.7rem;
+            text-transform: uppercase;
+        }
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cta {
+            position: relative;
+            padding: 130px 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(225,6,0,.93),
+                    rgba(110,0,0,.9)
+                ),
+                url("https://images.squarespace-cdn.com/content/v1/64fb3b40ee6525576f30a63f/1e95918b-ac5a-4c2a-aee6-f6e5d1fdc1b4/P1000406.jpg")
+                center / cover;
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .cta h2 {
+            font-family: var(--font-title);
+            font-size: clamp(4rem, 8vw, 7rem);
+            text-transform: uppercase;
+            line-height: .85;
+            margin-bottom: 25px;
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .cta .btn {
+            background: var(--black);
+        }
+
+        .cta .btn:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 20px 0 25px;
+            background: #050505;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--gray-dark);
+        }
+
+        footer p {
+            color: var(--gray);
+            max-width: 420px;
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 25px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--red);
+        }
+
+        .copyright {
+            padding-top: 0px;
+            color: #666;
+            font-size: .8rem;
+        }
+
+        /* =========================================================
+        WHATSAPP FLOAT
+        ========================================================= */
+
+       /* =========================================================
+   WHATSAPP FLOAT
+========================================================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #25D366;
+            color: #fff;
+
+            border-radius: 50%;
+
+            font-weight: 800;
+            font-size: .75rem;
+
+            z-index: 999;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.4);
+            transition: .3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+
+                    /* =========================================================
+            FOOTER LOGO
+            ========================================================= */
+
+            .footer-logo {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+                margin-bottom: 5px;
+            }
+
+            .footer-logo-symbol {
+                width: 110px;
+                height: auto;
+            }
+
+            .footer-logo-text {
+                width: 115px;
+                height: auto;
+            }
+
+                                /* =========================================================
+            FOOTER CONTACTO
+            ========================================================= */
+
+            .contact-icons {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                color: var(--gray);
+
+                transition: .25s;
+            }
+
+            .contact-item img {
+                width: 45px;
+                height: 45px;
+                object-fit: contain;
+            }
+
+            .contact-item:hover {
+                color: var(--white);
+                transform: translateX(4px);
+            }
+
+
+            /* =========================================================
+            INSTAGRAM / ÚLTIMOS TRABAJOS
+            ========================================================= */
+
+            .instagram-work-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px;
+                margin-top: 50px;
+            }
+
+            .instagram-work {
+                position: relative;
+                display: block;
+                aspect-ratio: 1 / 1;
+                overflow: hidden;
+                background: #151515;
+            }
+
+            .instagram-work img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform .5s ease;
+            }
+
+            .instagram-work::after {
+                content: "VER TRABAJO →";
+                position: absolute;
+                inset: 0;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background: rgba(0,0,0,.65);
+
+                font-family: var(--font-title);
+                font-size: 1.4rem;
+                font-weight: 800;
+                letter-spacing: 1px;
+
+                opacity: 0;
+                transition: opacity .3s ease;
+            }
+
+            .instagram-work:hover img {
+                transform: scale(1.06);
+            }
+
+            .instagram-work:hover::after {
+                opacity: 1;
+            }
+
+            .instagram-more {
+                display: flex;
+                justify-content: center;
+                margin-top: 45px;
+            }
+
+            .instagram-more a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                padding: 15px 28px;
+
+                border: 1px solid rgba(255,255,255,.3);
+
+                font-family: var(--font-title);
+                font-size: 1rem;
+                font-weight: 800;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+
+                transition: .3s;
+            }
+
+            .instagram-more a:hover {
+                background: var(--red);
+                border-color: var(--red);
+                color: var(--white);
+            }
+
+
+
+            /* =========================================================
+            CALIBRACIÓN
+            ========================================================= */
+
+            .calibration-info {
+                background: var(--black);
+            }
+
+
+            /* =========================================================
+            4 BENEFICIOS EN UNA FILA
+            ========================================================= */
+
+            .calibration-info .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+
+            /* =========================================================
+            EXPLICACIÓN DE LA CALIBRACIÓN
+            ========================================================= */
+
+            .calibration-process {
+                margin-top: 120px;
+                max-width: 1000px;
+            }
+
+            .calibration-process p {
+                text-align: justify;
+            }
+
+
+
+
+
+
+
+            /* =========================================================
+            CITA PREVIA
+            ========================================================= */
+
+            .appointment-notice {
+                margin-top: 20px;
+                padding-top: 15px;
+
+                border-top: 1px solid var(--gray-dark);
+
+                text-align: left;
+            }
+
+            .appointment-notice strong {
+                display: block;
+
+                font-family: var(--font-title);
+                font-size: 1.5rem;
+                font-weight: 800;
+
+                letter-spacing: 2px;
+                color: var(--red);
+
+                white-space: nowrap;
+            }
+
+            .appointment-notice p {
+                color: var(--gray);
+                font-size: .9rem;
+                line-height: 1.7;
+                margin-top: 8px;
+            }
+
+
+
+
+        /* =========================================================
+        RESPONSIVE
+        ========================================================= */
+
+        /* =========================================================
+        TABLET
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            /* HEADER */
+
+            .nav-links {
+                display: none;
+            }
+
+
+            /* SERVICIOS */
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            /* NOSOTROS */
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                min-height: 450px;
+            }
+
+
+            /* PROCESO */
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            /* FOOTER */
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            /* CALIBRACIÓN */
+
+            .calibration-info .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================================================
+        MOBILE
+        ========================================================= */
+
+        @media (max-width: 650px) {
+
+            /* GENERAL */
+
+            .section {
+                padding: 80px 0;
+            }
+
+
+            /* HEADER */
+
+            .nav-button {
+                display: none;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                background:
+                    linear-gradient(
+                        rgba(0,0,0,.82),
+                        rgba(0,0,0,.96)
+                    ),
+                    url("https://images.squarespace-cdn.com/content/v1/64fb3b40ee6525576f30a63f/1e95918b-ac5a-4c2a-aee6-f6e5d1fdc1b4/P1000406.jpg")
+                    center / cover;
+            }
+
+            .hero h1 {
+                font-size: 5rem;
+                letter-spacing: -2px;
+            }
+
+
+            /* SERVICIOS */
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* NOSOTROS */
+
+            .about-intro h2 {
+                font-size: 4rem;
+            }
+
+            .about-statement {
+                font-size: 2.4rem;
+            }
+
+            .about-pillars {
+                grid-template-columns: 1fr;
+                margin-top: 80px;
+            }
+
+            .about-story {
+                margin-top: 100px;
+            }
+
+            .about-story h2 {
+                font-size: 4.5rem;
+            }
+
+            .story-text {
+                margin-left: 0;
+            }
+
+            .about-ending {
+                margin-top: 100px;
+                padding: 70px 0;
+            }
+
+
+            /* PROCESO */
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* GALERÍA */
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 300px;
+            }
+
+            .gallery-item:first-child {
+                grid-row: span 1;
+            }
+
+
+            /* FOOTER */
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* INSTAGRAM */
+
+            .instagram-work-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .instagram-work::after {
+                display: none;
+            }
+
+
+            /* CALIBRACIÓN */
+
+            .calibration-info .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* CITA PREVIA */
+
+            .appointment-notice {
+                margin-top: 20px;
+                padding-top: 15px;
+            }
+
+            .appointment-notice strong {
+                font-size: 1.1rem;
+                white-space: normal;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <div class="container nav">
+
+        <a href="#" class="logo">
+           <img
+        src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787076109/logo_solorock.png"
+        alt="Logo SOLOROCK"
+        class="logo-symbol"
+            >
+
+          <img
+        src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787079993/SOLOROCK_sin_fondo.png"
+        alt="SOLOROCK"
+        class="logo-text"
+       >
+
+       
+        <span class="logo-slogan">
+            Trabajando por un futuro con más rock...
+        </span>
+    
+
+
+
+</a>
+
+        <ul class="nav-links">
+
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#trabajos">Trabajos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-kicker">
+                Luthería · Reparación · Customización
+            </div>
+
+            <h1>
+                TU<br>
+                GUITARRA.<br>
+                <span>TU SONIDO.</span>
+            </h1>
+
+            <p class="hero-text">
+                En SOLOROCK llevamos tu instrumento al siguiente nivel.
+                Calibración, reparación, electrónica, trastes,
+                pintura y modificaciones realizadas con precisión
+                y pasión por las guitarras.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#servicios"
+                    class="btn btn-primary"
+                >
+                    Ver servicios
+                </a>
+
+                <a
+                    href="https://wa.me/56962724569"
+                    target="_blank"
+                    class="btn btn-secondary"
+                >
+                    Cotizar por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     NOSOTROS
+========================================================= -->
+
+<section class="section about" id="nosotros">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <!-- IMAGEN -->
+            <div class="about-image"></div>
+
+
+            <!-- TEXTO PRINCIPAL -->
+            <div class="about-intro">
+
+                <div class="about-kicker">
+                    
+                </div>
+
+                <h2>
+                    NO SOMOS UNA
+                    <strong>TIENDA DE GUITARRAS.</strong>
+                </h2>
+
+                <div class="about-statement">
+                    SOMOS EL LUGAR DONDE
+                    <strong>
+                        LAS GUITARRAS VUELVEN
+                        A SER GUITARRAS.
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             HISTORIA
+        ====================================================== -->
+
+        <div class="about-story">
+
+            <h2>
+                UNA GUITARRA NUNCA LLEGA
+                AL TALLER POR CASUALIDAD.
+            </h2>
+
+            <div class="story-text">
+
+                <p>
+                    A veces necesita un ajuste.
+                </p>
+
+                <p>
+                    A veces una reparación.
+                </p>
+
+                <p>
+                    A veces una segunda oportunidad.
+                </p>
+
+                <p class="story-highlight">
+                    Y a veces simplemente necesita volver
+                    a sentirse como antes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             CIERRE
+        ====================================================== -->
+
+        <div class="about-ending">
+
+            <span>
+                ESO ES
+            </span>
+
+            <strong>
+                SOLOROCK.
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="calibration-info">
+
+<!-- =========================================================
+    CALIBRACIÓN
+========================================================= -->
+
+<section class="section calibration-info">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            ¿QUÉ CAMBIA CON UNA BUENA <span>CALIBRACIÓN?</span>
+        </h2>
+
+        <p class="section-intro">
+        </p>
+
+
+        <div class="services-grid">
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <h3>
+                    Tocabilidad
+                </h3>
+
+                <p>
+                    Una acción correctamente ajustada hace que el instrumento
+                    se sienta más cómodo y natural al tocar.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <h3>
+                    Afinación
+                </h3>
+
+                <p>
+                    Un ajuste preciso de puente, alma y quintaje ayuda a que
+                    el instrumento mantenga una mejor afinación a lo largo del diapasón.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <h3>
+                    Respuesta
+                </h3>
+
+                <p>
+                    La altura de las cuerdas y cápsulas puede cambiar
+                    completamente la respuesta del instrumento a tu forma de tocar.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <h3>
+                    Sonido
+                </h3>
+
+                <p>
+                    Un instrumento bien ajustado permite entregar todo su potencial.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div class="calibration-process">
+
+            <h2 class="section-title">
+                ¿QUÉ HACEMOS EN UNA <span>CALIBRACIÓN?</span>
+            </h2>
+
+            <p class="section-intro">
+                En nuestro servicio de calibración realizamos un ajuste integral
+                del instrumento, que incluye revisión y ajuste de alma, octavación, 
+                acción, cejuela, altura de cápsulas, apriete de hardware, lubricación 
+                y limpieza de clavijas y puente, balanceo del tremolo, ajuste de microinclinación 
+                del mástil, limpieza de potenciometros, limpieza e hidratación de diapasón, 
+                pulido de trastes, abrillantamiento y limpieza profunda del instrumento.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SERVICIOS
+========================================================= -->
+
+<section class="section services" id="servicios">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            SERVICIOS
+        </h2>
+
+        <p class="section-intro">
+        </p>
+
+
+        <div class="services-grid">
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <h3>
+                    Calibración
+                </h3>
+
+                <p>
+                    Guitarras eléctricas, bajos eléctricos, guitarras acústicas y electroacústicas con cuerdas de nylon o de bronce, charangos, ukeleles, violines y otros instrumentos de cuerda.<br><br>
+
+                    <strong> Guitarras y bajos: $27.000</strong><br>Otros instrumentos consultar.    
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <h3>
+                    Reparaciones
+                </h3>
+
+                <p>
+                    Reparación de quiebres, golpes, problemas
+                    estructurales y recuperación de instrumentos.<br><br>
+
+                    <strong> A convenir</strong>   
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <h3>
+                    Electrónica
+                </h3>
+
+                <p>
+                    Instalación de cápsulas, potenciómetros,
+                    switches, condensadores, treble bleed, jacks, recableado.<br><br>
+
+                    <strong> Consultar valores</strong>   
+                </p>
+
+            </article>
+
+                        <article class="service-card">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <h3>
+                    Apantallado
+                </h3>
+
+                <p>
+                    Apantallado en laminas de cobre para guitarras tipo Fender y Gibson <br><br>
+
+                    <strong> Desde $25.000</strong>   
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    05
+                </div>
+
+                <h3>
+                    Instalación de hardware
+                </h3>
+
+                <p>
+                    Reemplazo de clavijas, puentes fijo, straps, repuestos <br>Trabajamos con marcas como Wilkinson, Gotoh, Schaller, Grover, Floyd Rose.<br><br>
+                    
+                    <strong> Consultar valores</strong>                  
+                </p>
+
+            </article>
+
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    06
+                </div>
+
+                <h3>
+                    Reentrastado
+                </h3>
+
+                <p>
+                    Reentrastado en trastes de nickel o acero. Rectificado de diapasón y ajuste al radio deseado.<br>
+                    Disponible en medidas vintage, narrow, medium, medium jumbo, jumbo, extra jumbo.<br><br>
+                    
+                    <strong> Desde $80.000</strong>
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    07
+                </div>
+
+                <h3>
+                    Rectificación de trastes
+                </h3>
+
+                <p>
+                    Nivelación, coronado, biselado, pulido.<br> Trastes de nickel o acero.<br><br>
+                    
+                    <strong> Desde $30.000</strong>
+                </p>
+
+            </article>
+            
+            <article class="service-card">
+
+                <div class="service-number">
+                    08
+                </div>
+
+                <h3>
+                    Reemplazo de alma
+                </h3>
+
+                <p>
+                    Retiro seguro del diapasón sin desmontar trastes, reemplazo del alma y posterior reinstalación y encolado.<br><br>
+                    
+                    <strong> Consultar valor</strong>
+                </p>
+
+            </article>
+
+                        </article>
+
+                        <article class="service-card">
+
+                <div class="service-number">
+                    09
+                </div>
+
+                <h3>
+                    Encargo de cápsulas
+                </h3>
+
+                <p>
+                    Encargo y posterior instalación de cápsulas.<br> 
+                    Trabajamos con marcas como Seymour Duncan, Dimarzio, EMG, Fender, Fishman.<br><br>
+                    <strong> A convenir</strong>
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    10
+                </div>
+
+                <h3>
+                    Pintura
+                </h3>
+
+                <p>
+                    Reparación de acabados, retoques, pintura y recuperación estética del instrumento.<br><br>
+                    
+                    <strong> A convenir</strong>
+                </p>
+
+            </article>
+            
+            <article class="service-card">
+
+                <div class="service-number">
+                    11
+                </div>
+
+                <h3>
+                    Customización
+                </h3>
+
+                <p>
+                    Modificaciones, upgrades y proyectos especiales para conseguir exactamente el instrumento que buscas.<br><br>
+                    
+                    <strong> A convenir</strong>
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    12
+                </div>
+
+                <h3>
+                    Conversión a fretless
+                </h3>
+
+                <p>
+                    Incluye rectificado de diapasón, ajuste al radio deseado y sellado.
+                    <br> 
+                    <strong> $50.000</strong>
+                </p>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    13
+                </div>
+
+                <h3>
+                    Instalación de sistemas electroacústicos
+                </h3>
+
+                <p>
+                    Conversión de instrumentos acústicos a electroacústicos.<br><br>
+                    <strong> A convenir</strong>
+                </p>
+
+                </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    14
+                </div>
+
+                <h3>
+                    Escalopado
+                </h3>
+
+                <p>
+                    <br> 
+                    <strong> Desde $30.000</strong>
+                </p>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    15
+                </div>
+
+                <h3>
+                    Fabricación de cases customizados
+                </h3>
+
+                <p>
+                    <br> 
+                    <strong> Desde $200.000</strong>
+                </p>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    16
+                </div>
+
+                <h3>
+                    Fabricación de fundas personalizadas
+                </h3>
+
+                <p>
+                    <br> 
+                    <strong> Desde $50.000</strong>
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PROCESO
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            ¿CÓMO <span>TRABAJAMOS?</span>
+        </h2>
+
+        <p class="section-intro">
+        </p>
+
+
+        <div class="process-grid">
+
+            <div class="process-item">
+
+                <span>01</span>
+
+                <h3>
+                    Diagnóstico
+                </h3>
+
+                <p>
+                    Revisamos el instrumento y detectamos
+                    qué necesita realmente.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <span>02</span>
+
+                <h3>
+                    Presupuesto
+                </h3>
+
+                <p>
+                    Te explicamos el trabajo antes de comenzar.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <span>03</span>
+
+                <h3>
+                    Trabajo
+                </h3>
+
+                <p>
+                    Realizamos la reparación, ajuste o modificación.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <span>04</span>
+
+                <h3>
+                    Entrega
+                </h3>
+
+                <p>
+                    Probamos el instrumento contigo antes de la entrega para asegurarnos de que todo esté en orden.
+                </p>
+
+            </div>
+
+            <div class="appointment-notice">
+
+                <strong>
+                    ATENCIÓN SOLO CON CITA PREVIA
+                </strong>
+
+                <p>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+ 
+
+</section>
+
+
+
+
+<!-- =========================================================
+     GALERÍA
+========================================================= -->
+
+<section class="section gallery" id="trabajos">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            ÚLTIMOS <span>TRABAJOS</span>
+        </h2>
+
+        <p class="section-intro">
+        </p>
+
+        <div class="instagram-work-grid">
+
+            <a
+                href="https://www.instagram.com/p/DUrF-fkDogM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA=="
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787161192/1._Fender_Starcaster.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/p/DP9J04pjTtS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA=="
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787160922/2._Fender_Stratocaster_Americana.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/p/DYiMgRWluga/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA=="
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787162399/3._Martin_Americana.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/p/DVt98l6D1Ye/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA==
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787160932/4._Takamine_12_cuerdas.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/p/DcCOtD1G6vg/?img_index=1"
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787310183/5._antesdespues2.0.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/p/DW9096Zjqws/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA=="
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787160940/6._Cejuela_de_Hueso_Guitarra.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+            <a
+                href="https://www.instagram.com/p/DbL-VCXBg3N/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA=="
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787162525/7._Cejuela_de_Hueso_Bajo_5.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+            <a
+                href="https://www.instagram.com/p/DVBm76QDaTS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA=="
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787160936/8._Fender_Deluxe.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+            <a
+                href="https://www.instagram.com/p/DbtyasSDpko/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==&igsi=MzRlODBiNWFlZA=="
+                target="_blank"
+                class="instagram-work"
+            >
+                <img
+                    src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787162750/9._overhaul.jpg"
+                    alt="Trabajo de SOLOROCK"
+                >
+            </a>
+
+            
+
+        </div>
+
+
+        <div class="instagram-more">
+
+            <a
+                href="https://www.instagram.com/solorockcl"
+                target="_blank"
+            >
+                VER MÁS EN INSTAGRAM →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta" id="contacto">
+
+    <div class="container">
+
+        <div class="cta-content">
+
+            <h2>
+                ¿QUÉ NECESITA<br>
+                TU INSTRUMENTO?
+            </h2>
+
+            <p>
+                Mándanos fotos, cuéntanos qué problema tiene
+                y revisamos contigo la mejor solución.
+            </p>
+
+            <a
+                href="https://wa.me/56962724569"
+                target="_blank"
+                class="btn"
+            >
+                HABLAR POR WHATSAPP
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="footer-logo">
+                     <img
+                      src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787076109/logo_solorock.png"
+                      alt="Logo SOLOROCK"
+                      class="footer-logo-symbol"
+                      >
+
+                    <img
+                        src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787079993/SOLOROCK_sin_fondo.png"
+                        alt="SOLOROCK"
+                        class="footer-logo-text"
+                    >
+                </div>
+
+                <p>
+                    Luthería, reparación, calibración y
+                    personalización de guitarras, bajos e instrumentos acústicos de cuerda frotada y cuerda pulsada.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Navegación
+                </div>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#servicios">
+                            Servicios
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#nosotros">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#trabajos">
+                            Trabajos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contacto">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Contacto
+                </div>
+
+                <div class="contact-icons">
+
+                    <a
+                        href="https://wa.me/56962724569"
+                        target="_blank"
+                        class="contact-item"
+                    >
+                        <img
+                            src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787141254/WSP_footer.png"
+                            alt="WhatsApp"
+                        >
+
+                        <span>WhatsApp</span>
+                    </a>
+
+
+                    <a
+                        href="https://instagram.com/solorockcl"
+                        target="_blank"
+                        class="contact-item"
+                    >
+                        <img
+                            src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787076116/instagram-logo.png"
+                            alt="Instagram"
+                        >
+
+                        <span>Instagram</span>
+                    </a>
+
+
+                    <a
+                        href="https://maps.app.goo.gl/rgqEsnGfjPjcAkU9A"
+                        target="_blank"
+                        class="contact-item"
+                    >
+                        <img
+                            src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787138313/ubicacion.png"
+                            alt="Ubicación"
+                        >
+
+                        <span>Concón, Región de Valparaíso, Chile</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        <div class="copyright">
+
+            © 2026 SOLOROCK · Todos los derechos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     WHATSAPP FLOTANTE
+========================================================= -->
+
+<a
+    href="https://wa.me/56962724569"
+    target="_blank"
+    class="whatsapp"
+    aria-label="Contactar por WhatsApp"
+>
+    <img
+        src="https://res.cloudinary.com/rwxtjrlu/image/upload/v1787015958/WSP.png"
+        alt="WhatsApp"
+        class="whatsapp-icon"
+    >
+</a>
+
+
+<script>
+
+    /*
+    ============================================================
+    ANIMACIÓN SUAVE DE APARICIÓN
+    ============================================================
+    */
+
+    const elements = document.querySelectorAll(
+        ".service-card, .process-item, .gallery-item"
+    );
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+    elements.forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(30px)";
+        element.style.transition = "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+</body>
+</html>
