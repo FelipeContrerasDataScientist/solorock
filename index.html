@@ -1089,7 +1089,7 @@
 
 
             /* HERO */
-
+            
             .hero {
                 background:
                     linear-gradient(
@@ -1099,10 +1099,17 @@
                     url("https://images.squarespace-cdn.com/content/v1/64fb3b40ee6525576f30a63f/1e95918b-ac5a-4c2a-aee6-f6e5d1fdc1b4/P1000406.jpg")
                     center / cover;
             }
-
+            
+            .hero-kicker {
+                font-size: .75rem;
+                letter-spacing: 2px;
+                margin-bottom: 15px;
+            }
+            
             .hero h1 {
-                font-size: 5rem;
+                font-size: clamp(3.6rem, 16vw, 5rem);
                 letter-spacing: -2px;
+                line-height: .82;
                 max-width: 100%;
             }
 
